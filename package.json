@@ -1,6 +1,6 @@
 {
   "name": "gulp-to-go",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Create a portable Gulp environment",
   "main": "index.js",
   "scripts": {
