@@ -40,11 +40,12 @@ module.exports = function GulpToGo(fn) {
     const taskFn = gulp.task(task);
 
     if (taskFn) {
-      // asyncDone monitors a Gulp task in any format and signals when it's done
-      asyncDone(taskFn, (err, res) => {
+      gulp.parallel(task)(err => {
         if (err) reject(err);
-        else resolve(res);
+        else resolve();
       });
+
+      gulp.on('error', err => reject(new Error(err.error)));
     }
     else {
       reject(new Error(`gulp-to-go: no public task named ${task}`));
