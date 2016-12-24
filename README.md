@@ -65,6 +65,10 @@ By omitting the task name from the function call, the `default` task will be run
 
 That function returns a Promise which resolves when the given task has been run, or rejects if there's an error in the process. Note that if the task being called includes a step that runs indefinitely, such as a `watch()` function, the Promise will never resolve, unless an error is encountered, in which case it will reject.
 
+## Known Issues
+
+- Gulp's CLI handles all of the logging and such that you're used to when working with Gulp, which this library doesn't yet have. Stream errors will be reported, but not with the same output as Gulp's CLI.
+
 ## Local Development
 
 ```bash
